@@ -33,13 +33,13 @@ public class Outputter implements CommandLineRunner {
         User user2 = new User("Nicolas", "LUZURIER", 41);
         LOG.info("******************");
         LOG.info(user2 + " has been created !");
-        userRepository.save(user1);
+        userRepository.save(user2);
         LOG.info(user2 + " has been saved !");
         
         User user3 = new User("Tony", "CHEVRIS", 27);
         LOG.info("******************");
         LOG.info(user3 + " has been created !");
-        userRepository.save(user1);
+        userRepository.save(user3);
         LOG.info(user3 + " has been saved !");
         
         User tempUser = userRepository.findById(1L).get(); /* On écrit "1L" car 
@@ -57,7 +57,6 @@ public class Outputter implements CommandLineRunner {
         };
         
         // Supprime le premier utilisateur de la BDD
-        // Supprime le second utilisateur de la BDD
         userRepository.deleteById(1L); /* risque de provoquer une erreur si 
                                 tu n'as pas vidé ta table avant de relancer 
                                 ton application ! */
